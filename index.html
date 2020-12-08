@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h2>Accordian</h2>
+
+    <p>Click on button to reveal content</p>
+
+    <button class="accordian">Section 1</button>
+
+    <div class="panel">
+
+        <p>This is the contens of section one - it is amazing</p>
+
+    </div>
+
+    <button class="accordian">Section 2</button>
+
+    <div class="panel">
+
+        <p>This is the contens of section two - it is even more amazing</p>
+
+    </div>
+
+    <button class="accordian">Section 3</button>
+
+    <div class="panel">
+
+        <p>This is the contens of section two - the most amazing of all amazing things</p>
+
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordian");
+        var i;
+
+
+        for (i = 0; i < acc.length; i++) {
+
+
+            acc[i].addEventListener("click", function() {
+
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+
+                    panel.style.maxHeight = null;
+
+                } else {
+
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+
+            }
+                 ); <!--end eventlistener-->
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
